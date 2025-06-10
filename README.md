@@ -26,6 +26,4 @@ This project is a modular data pipeline that scrapes product prices from e-comme
 
 ## 🖼️ Project Overview
 
-![E-Commerce Price Tracker Overview](https://eyq.eyfabric.ey.com/data/v1/download-file/0d5d94c6-1e94-4f74-92d7-9861376acb6c.png)
-
 
