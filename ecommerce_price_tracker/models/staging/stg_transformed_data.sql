@@ -1,0 +1,23 @@
+select
+  cast(final_price as float64) as final_price,
+  cast(initial_price as float64) as initial_price,
+  cast(discount_pct as float64) as discount_pct,
+  cast(rating as float64) as rating,
+  cast(is_discounted as boolean) as is_discounted,
+  cast(is_price_dropped as boolean) as is_price_dropped,
+  cast(is_same_price as boolean) as is_same_price,
+  date,
+  parse_date('%Y-%m-%d', date) as parsed_date,
+  year,
+  month,
+  day,
+  brand,
+  title,
+  asin,
+  seller_id,
+  categories_array,
+  main_category,
+  sub_category,
+  availability,
+  is_available
+from {{ source('ecommerce', 'transformed_data') }}

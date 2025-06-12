@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    database: e-commerce-gcp-461108
+    schema: price_tracker
+    tables:
+      - name: transformed_data
+      - name: high_rated_products
+      - name: brand_avg_price
+
+models:
+  - name: stg_transformed_data
+    description: "Cleaned and enriched ecommerce product data"
+    columns:
+      - name: asin
+        tests: [not_null, unique]
+      - name: final_price
+        tests: [not_null]
+      - name: rating
+        tests: [not_null]
+
+  - name: stg_avg_brand_price
+    description: "Average final price per brand"
+    columns:
+      - name: brand
+        tests: [not_null]
+      - name: final_price
+        tests: [not_null]
+
+  - name: product_summary
+    description: "Final analytics-ready table with product, rating, and pricing insights"
