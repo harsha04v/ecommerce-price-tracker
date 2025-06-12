@@ -1,38 +1,70 @@
-# 🛒 E-Commerce Price Tracker
+# 🛒 Ecommerce Price Tracker
 
-This project is a modular data pipeline that scrapes product prices from e-commerce websites, stores the raw data in Google BigQuery, transforms it using DBT, and automates the entire workflow using Apache Airflow.
+A complete data engineering and analytics pipeline that tracks and analyzes ecommerce product pricing, discounts, and brand performance using PySpark, BigQuery, and dbt.
 
-## 📌 Project Highlights
+---
 
-- **Web Scraping**: Extracts product prices using Python, Requests, and BeautifulSoup.
-- **Cloud Storage**: Loads raw data into Google BigQuery for scalable storage and querying.
-- **Data Transformation**: Uses DBT to clean and model the data in SQL.
-- **Workflow Orchestration**: Automates scraping and loading tasks with Apache Airflow.
-- **Modular Design**: Organized folder structure for easy maintenance and scalability.
+## 📌 Project Overview
 
-## 🧰 Tech Stack
+This project demonstrates how to build a scalable data pipeline for ecommerce price tracking. It involves data cleaning, transformation, modeling, and analytics-ready output using modern data tools and best practices.
 
-- Python
-- Apache Airflow
-- Google BigQuery
-- DBT (Data Build Tool)
-- BeautifulSoup & Requests
-- Git & GitHub
+---
 
+## 🧱 Tech Stack
 
-## 📊 Project Architecture
+- **PySpark** – for scalable data cleaning and transformation
+- **Google BigQuery** – for cloud-based data storage and querying
+- **dbt (Data Build Tool)** – for modular SQL modeling, testing, and documentation
+- **Parquet/CSV** – for intermediate data storage
 
-![E-Commerce Price Tracker Architecture](https://eyq.eyfabric.ey.com/data/v1/download-file/818243ff-5a77-4312-82d2-36a832d172da.png)
+---
 
-## 🖼️ Project Overview
+## ✅ Features
 
+- Cleans raw ecommerce product data
+- Calculates discount percentages and flags discounted products
+- Parses and standardizes product categories
+- Aggregates average final price by brand
+- Flags high-rated products (rating ≥ 4.0)
+- Builds analytics-ready tables using dbt
+- (Optional) Ready for dashboarding in Power BI, Looker Studio, or Metabase
 
+---
 
-## DBT
-![image](https://github.com/user-attachments/assets/e0e9b85b-fcf2-4b59-8c5d-0011d01386f2)
+## 🧪 Data Pipeline Steps
 
+### 1. **Data Cleaning & Transformation (PySpark)**
+- Removed unnecessary columns
+- Handled missing values
+- Standardized data types (prices, ratings, timestamps)
+- Parsed categories into arrays
+- Calculated `discount_pct`, `is_discounted`, and other flags
+- Saved outputs in Parquet and CSV formats
 
+### 2. **Data Warehouse (BigQuery)**
+- Loaded 3 datasets:
+  - `transformed_data`
+  - `high_rated_products`
+  - `avg_brand_price`
 
+### 3. **Data Modeling (dbt)**
+- Created staging models for each dataset
+- Built a final model `product_summary` with:
+  - Product metadata
+  - Discount and rating flags
+  - Brand-level price comparison
+- Added tests and documentation
+- Generated dbt docs for easy exploration
 
+---
 
+## 📊 Final Output: `product_summary`
+
+An analytics-ready table that includes:
+- Product details
+- Discount and rating flags
+- Average brand price
+- Price comparison indicators
+
+---
 
