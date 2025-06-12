@@ -27,3 +27,12 @@ This project is a modular data pipeline that scrapes product prices from e-comme
 ## 🖼️ Project Overview
 
 
+
+## DBT
+![image](https://github.com/user-attachments/assets/e0e9b85b-fcf2-4b59-8c5d-0011d01386f2)
+
+
+
+
+
+
