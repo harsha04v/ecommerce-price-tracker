@@ -69,7 +69,8 @@ An analytics-ready table that includes:
 ---
 
 ## 📌 Future Enhancements
--Add time-series tracking for price changes
--Integrate competitor pricing data
--Build interactive dashboards using Power BI or Looker Studio
--Automate pipeline with Airflow or dbt Cloud
+
+- Add time-series tracking for price changes
+- Integrate competitor pricing data
+- Build interactive dashboards using Power BI or Looker Studio
+- Automate pipeline with Airflow or dbt Cloud
